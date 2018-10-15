@@ -21,7 +21,6 @@ library(ggthemes)   #Used in conjunction with ggplot2, specifically for theme_fe
 test <- read.csv("testSamples.csv")
 trans <- read.csv("transData.csv")
 ```
-<br /> 
 
 ### EDA and (non)-Cleanup 
 (As will be seen in this section, no variables have missing or inappropriate values, so minimial effort was required - hence the 'non'.)
