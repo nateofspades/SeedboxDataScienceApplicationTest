@@ -1,3 +1,3 @@
 # SeedboxDataScienceApplicationTest
 
-Please see SeedboxTest.md file to view the solutions to the questions.
+Please see the SeedboxTest.md file to view the solutions to the questions.
