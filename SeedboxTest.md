@@ -25,7 +25,7 @@ trans <- read.csv("transData.csv")
 ### EDA and (non)-Cleanup 
 (As will be seen in this section, no variables have missing or inappropriate values, so minimial effort was required - hence the 'non'.)
 
-***How a typical row looks for each of test and trans***
+* ***How a typical row looks for each of test and trans***
 
 
 ```
@@ -38,7 +38,7 @@ trans <- read.csv("transData.csv")
 ## 1       52346326        11           REBILL              24.95
 ```
 
-***No missing values***
+* ***No missing values***
 
 
 ```r
@@ -49,7 +49,7 @@ sum(is.na(test)) + sum(is.na(trans))
 ## [1] 0
 ```
 
-***test$sample_id - no duplicate values (as desired)***
+* ***test$sample_id - no duplicate values (as desired)***
 
 
 ```r
@@ -60,7 +60,7 @@ identical(test$sample_id, 1:nrow(test))
 ## [1] TRUE
 ```
 
-***transaction_id - no duplicate values (as desired)***
+* ***transaction_id - no duplicate values (as desired)***
 
 
 ```r
@@ -71,7 +71,7 @@ identical(trans$transaction_id, trans$transaction_id[1]:(trans$transaction_id[1]
 ## [1] TRUE
 ```
 
-***transaction_amount - no inappropriate values, positives and negatives are paired by magnitude, mostly positive transaction amounts***
+* ***transaction_amount - no inappropriate values, positives and negatives are paired by magnitude, mostly positive transaction amounts***
 
 
 ```r
@@ -86,11 +86,8 @@ table(trans$transaction_amount)
 
 <img src="SeedboxTest_files/figure-html/unnamed-chunk-6-1.png" style="display: block; margin: auto;" />
 
-***transaction_type - no inappropriate values***
+* ***transaction_type - no inappropriate values***
 
-  
- 
-  
 
 ```r
 table(trans$transaction_type)
@@ -102,7 +99,7 @@ table(trans$transaction_type)
 ##        163       6961        306
 ```
 
-***CHARGEBACK and REFUND transactions are all negative; REBILL transactions are all positive (as desired)*** <br />
+* ***CHARGEBACK and REFUND transactions are all negative, REBILL transactions are all positive (as desired);*** <br />
 ***Vast majority of transactions are REBILLs***
 
 
@@ -121,7 +118,7 @@ table(trans$transaction_type, trans$transaction_amount>=0)
 <img src="SeedboxTest_files/figure-html/unnamed-chunk-9-1.png" style="display: block; margin: auto;" />
 
 
-***No inappropriate values for test_group but it is skewed towards control group***
+* ***No inappropriate values for test_group but it is skewed towards control group***
 
 
 ```r
@@ -292,7 +289,5 @@ t.test(web4$chargeback_rate, call4$chargeback_rate, alternative="greater")
 ```
 ***Conclusion:***
 We see that the mean chargeback rate for the control group (0.048) is three times as large as that of the test group (0.016). Moreover the p-value (3.66e-06) is small and less than the standard significance level of 0.05. This means that there is strong reason to believe that the control group customers have a higher chargeback rate than the test group customers. Furthermore, we can say with 95% confidence that the true absolute difference in these two rates is at least 2.04%.
-
-
 
 
