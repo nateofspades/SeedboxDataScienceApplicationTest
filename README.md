@@ -1,4 +1,6 @@
-# SeedboxDataScienceApplicationTest
+# Seedbox Data Science Application Test
+
+Hello hiring manager at Seedbox Technologies - I'm glad you made it here. 
 
 Please see the SeedboxTest.md file to view the solutions to the questions. <br />
 The original file that was built in RStudio can be seen in SeedboxText.Rmd.
